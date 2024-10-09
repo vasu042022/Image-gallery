@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            background: black;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            text-decoration: underline;
+            margin-top: 40px;
+        }
+        .main {
+            display: flex;
+            width: 1100px;
+            height: 100vh;
+            /* padding: 40px; */
+            /* border: 1px solid red; */
+            margin: auto;
+            gap: 50px;
+        }
+        .boxes {
+            width: 30%;
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+        }
+        .boxes img {
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.1);
+        }
+        .big {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .big img {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Photo Gallery</h1>
+    <div class="main">
+        <div class="boxes">
+            <img src="./Images/1.jpg" width="200px" height="200px">
+            <img src="./Images/2.jpg" width="200px" height="200px">
+            <img src="./Images/3.jpg" width="200px" height="200px">
+        </div>
+        <div class="big"> <img id="img-big" src="./Images/1.jpg" width="400px" height="400px">
+        </div>
+    </div>
+    <script>
+        var images = document.querySelectorAll("img");
+        var bigimage = document.querySelector("#img-big");
+        for (img of images) {
+            img.addEventListener(
+                "click",
+                function (e) {
+                    bigimage.src = e.target.src;
+                }
+            )
+        }
+    </script>
+</body>
+</html>
